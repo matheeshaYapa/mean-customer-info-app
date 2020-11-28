@@ -1,0 +1,66 @@
+<section>
+  <div class="grid-container">
+    <h1 mat-dialog-title>View Info</h1>
+    <div mat-dialog-content>
+      <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxLayoutAlign.gt-sm="start start">
+        <div fxLayout="column" class="w-100">
+          <div fxLayout="row" fxLayoutGap="1rem">
+            <span class="mat-h4">First Name</span>
+            <span class="mat-h5">{{data.firstName || 'N/A'}}</span>
+          </div>
+
+          <div fxLayout="row" fxLayoutGap="1rem">
+            <span class="mat-h4">Last Name</span>
+            <span class="mat-h5">{{data.lastName || 'N/A'}}</span>
+          </div>
+
+          <div fxLayout="row" fxLayoutGap="1rem">
+            <span class="mat-h4">Email</span>
+            <span class="mat-h5">{{data.email || 'N/A'}}</span>
+          </div>
+
+          <div fxLayout="row" fxLayoutGap="1rem">
+            <span class="mat-h4">Phone</span>
+            <span class="mat-h5">{{data.phone || 'N/A'}}</span>
+          </div>
+
+          <div fxLayout="row" fxLayoutGap="1rem">
+            <span class="mat-h4">Mobile</span>
+            <span class="mat-h5">{{data.mobile || 'N/A'}}</span>
+          </div>
+        </div>
+
+        <div fxLayout="column" class="w-100">
+          <div fxLayout="row" fxLayoutGap="1rem">
+            <span class="mat-h4">Address</span>
+            <span class="mat-h5">{{data.address || 'N/A'}}</span>
+          </div>
+
+          <div fxLayout="row" fxLayoutGap="1rem">
+            <span class="mat-h4">City</span>
+            <span class="mat-h5">{{data.city || 'N/A'}}</span>
+          </div>
+
+          <div fxLayout="row" fxLayoutGap="1rem">
+            <span class="mat-h4">State</span>
+            <span class="mat-h5">{{data.state || 'N/A'}}</span>
+          </div>
+
+          <div fxLayout="row" fxLayoutGap="1rem">
+            <span class="mat-h4">ZIP Code</span>
+            <span class="mat-h5">{{data.zipCode || 'N/A'}}</span>
+          </div>
+
+          <div fxLayout="row" fxLayoutGap="1rem">
+            <span class="mat-h4">Birthday</span>
+            <span class="mat-h5">{{(data.birthday | date) || 'N/A'}}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div mat-dialog-actions fxLayout="row" fxLayoutAlign="center center">
+      <button mat-button mat-dialog-close><mat-icon>cancel</mat-icon>Close</button>
+    </div>
+  </div>
+</section>
