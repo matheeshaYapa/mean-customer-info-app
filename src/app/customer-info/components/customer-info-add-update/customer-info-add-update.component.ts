@@ -52,7 +52,7 @@ export class CustomerInfoAddUpdateComponent implements OnInit {
     }
 
     if (this.isUpdate) {
-      this.customerInfoService.updateInfo.next({...this.infoForm.value, id: this.activatedRoute.snapshot.params.customerId});
+      this.customerInfoService.updateInfo.next({...this.infoForm.value, id: +this.activatedRoute.snapshot.params.customerId});
     } else {
       this.customerInfoService.addNewInfo.next({...this.infoForm.value, id: this.customerInfoService.tableLength + 1});
     }

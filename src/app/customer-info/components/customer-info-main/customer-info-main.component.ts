@@ -30,21 +30,6 @@ export class CustomerInfoMainComponent implements OnInit, AfterViewInit {
   ) { }
 
   ngOnInit(): void {
-    this.dataSource.data = [{
-      id: 1,
-      lastName: 'last',
-      email: 'werwr',
-      phone: '3234234',
-      mobile: '234234234',
-      address: 'fsdgsdfasdfasdfa',
-      city: 'dfasdfag',
-      state: 'sfdfsa',
-      zipCode: 'sdfadsf',
-      birthday: new Date(),
-      firstName: 'first'
-    }];
-    this.cdr.detectChanges();
-
     this.listenToNewlyAddedInfo();
     this.listenToUpdatedInfo();
   }
@@ -77,6 +62,12 @@ export class CustomerInfoMainComponent implements OnInit, AfterViewInit {
 
     this.customerInfoService.passInfoToEdit.next(selectedRow);
     this.router.navigate(['/customer-info/update', selectedRow.id]);
+  }
+
+  onDeleteCustomer(selectedRowIndex: number): void {
+    this.dataSource.data.splice(selectedRowIndex, 1);
+    this.dataSource.paginator = this.paginator;
+    this.dataSource.sort = this.sort;
   }
 
   private listenToNewlyAddedInfo(): void {
