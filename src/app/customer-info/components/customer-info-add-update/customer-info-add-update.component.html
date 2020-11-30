@@ -1,6 +1,7 @@
 <section>
   <div class="grid-container">
-    <h2 class="mat-h2">Add Info</h2>
+    <h2 class="mat-h2" *ngIf="!isUpdate">Add Info</h2>
+    <h2 class="mat-h2" *ngIf="isUpdate">Update Info</h2>
 
     <mat-card>
       <div class="grid-container">
