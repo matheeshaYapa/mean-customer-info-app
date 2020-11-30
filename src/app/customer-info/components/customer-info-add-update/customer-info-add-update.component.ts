@@ -68,8 +68,8 @@ export class CustomerInfoAddUpdateComponent implements OnInit {
       city: new FormControl(null, {validators: [Validators.required]}),
       state: new FormControl(null, {validators: []}),
       zipCode: new FormControl(null, {validators: []}),
-      phone: new FormControl(null, {validators: [Validators.required, Validators.pattern('')]}),
-      mobile: new FormControl(null, {validators: [Validators.required, Validators.pattern('')]}),
+      phone: new FormControl(null, {validators: [Validators.required, Validators.pattern(/^((0)[0-9]{9})$/m)]}),
+      mobile: new FormControl(null, {validators: [Validators.required, Validators.pattern(/^((?!(0))[0-9]{9})$/m)]}),
       birthday: new FormControl(null, {validators: [Validators.required]})
     });
   }
